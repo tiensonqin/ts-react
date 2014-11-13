@@ -12,17 +12,23 @@
   :plugins [[lein-ring "0.8.13"]]
 
   :ring {:handler {{name}}.handler/handler}
-  
-  :profiles {}
-  
+
+  :profiles {:prod {:cljsbuild
+                    {:builds
+                     {:client {:compiler
+                               {:optimizations :advanced
+                                :preamble ^:replace ["reagent/react.min.js"]
+                                :pretty-print false}}}}}
+             :srcmap {:cljsbuild
+                      {:builds
+                       {:client {:compiler
+                                 {:source-map "resources/public/js/out/{{name}}.js.map"
+                                  :source-map-path "{{name}}"}}}}}}
+
   :cljsbuild {:builds
               {:dev {:source-paths ["src/cljs"]
                      :compiler
                      {:preamble ["reagent/react.js"]
                       :output-to "resources/public/js/{{name}}.js"
                       :output-dir "resources/public/js/out"
-                         
-                      :source-map "resources/public/js/out.js.map"
-                      :externs ["react/externs/react.js"]
-                      :optimizations :none                      
                       :pretty-print true}}}})
