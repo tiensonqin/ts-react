@@ -11,7 +11,7 @@
 
   :plugins [[lein-ring "0.8.13"]]
 
-  :ring {:handler {{name}}.core/handler}
+  :ring {:handler {{name}}.handler/handler}
   
   :profiles {}
   

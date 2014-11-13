@@ -1,4 +1,4 @@
-(ns {{name}}.core
+(ns {{name}}.handler
   (:use compojure.core)
   (:require [compojure.handler :as handler]
             [compojure.route :as route]

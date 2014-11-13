@@ -1,4 +1,4 @@
-(defproject mies-om/lein-template "0.1.0"
+(defproject ts-react/lein-template "0.1.0"
   :description "A minimal react.js project template"
   :url "http://github.com/tiensonqin/ts-react"
   :license {:name "Eclipse Public License"
